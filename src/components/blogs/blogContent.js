@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const BlogContent = ({ content }) => {
@@ -69,7 +70,9 @@ const BlogContent = ({ content }) => {
         case 'img':
           return (
             <div key={index} className="flex flex-col items-start justify-start pt-[32px]">
-              <img
+              <Image
+                width={700}
+                height={400}
                 src={element.src}
                 alt={element.alt}
                 className="w-full rounded-[16px] "

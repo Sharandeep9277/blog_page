@@ -26,19 +26,15 @@ const LottieAnimation = dynamic(() => import('@/components/LottieAnimation'), { 
     <div className="min-h-screen bg-white flex flex-col items-center">
       <Navbar/>
       
-      {/* MV Section */}
       <div className="mv-section">
-        {/* Hero Image - now as img element */}
-        
-        
-        {/* Left div */}
+
         <div className="mv-left">
           <div className="headline">
             ただ作るのではなく、<br />
             成果につながる<br />
             「本質的なものづくり」を。
           </div>
-          {/* Button - only shows on desktop */}
+          
           <div className="mv-button-desktop">
             <Button1PC 
               text="お問い合わせはこちら"
@@ -47,14 +43,14 @@ const LottieAnimation = dynamic(() => import('@/components/LottieAnimation'), { 
           </div>
         </div>
         
-        {/* Right div - Lottie Animation */}
+        
         <div className="mv-right">
           <div className="mv-lottie-container">
             <LottieAnimation className="mv-lottie-animation" />
           </div>
         </div>
         
-        {/* Button for tablet/mobile - shows outside the divs */}
+        
         <div className="mv-button-mobile">
           <Button1PC 
             text="お問い合わせはこちら"
