@@ -10,7 +10,7 @@ const Navbar = ({
   className = "",
   menuItems = [
     { text: "TOP", href: "/", isSelected: true },
-    { text: "ブログ", href: "/about", isSelected: false }
+    { text: "ブログ", href: "/blogs", isSelected: false }
   ],
   contactText = "お問い合わせ",
   contactText2 = "お問い合わせはこちら",

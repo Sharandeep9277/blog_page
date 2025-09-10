@@ -8,6 +8,7 @@ import BlogSearchBar from "@/components/blogs/BlogSearchBar";
 import Tag from "@/components/buttons/tag";
 import FooterCta from "@/components/footerCTA";
 import Footer from "@/components/footer";
+import { useRouter } from "next/navigation";
 
 export default function Blogs() {
   const [blogs, setBlogs] = useState([]);
@@ -16,6 +17,7 @@ export default function Blogs() {
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTag, setActiveTag] = useState('All');
+  const router = useRouter();
 
   const tags = ['All', 'IT Consulting', 'Engineering', 'Branding', 'Design', 'Other'];
 
@@ -44,18 +46,18 @@ export default function Blogs() {
     fetchBlogs();
   }, []);
 
-  // Filter blogs based on search term and active tag
+
   useEffect(() => {
     let filtered = blogs;
 
-    // Filter by tag first
+
     if (activeTag !== 'All') {
       filtered = filtered.filter(blog =>
         blog.tags?.some(tag => tag.toLowerCase() === activeTag.toLowerCase())
       );
     }
 
-    // Then filter by search term
+    
     if (searchTerm) {
       filtered = filtered.filter(blog =>
         blog.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -78,13 +80,17 @@ export default function Blogs() {
 
   const handleBlogClick = (blog) => {
     console.log('Blog clicked:', blog);
-    // router.push(`/blog/${blog.slug}`);
+    router.push(`/blogs/${blog.slug}`);
   };
 
   if (loading) {
     return (
       <div className="min-h-screen bg-white flex flex-col items-center">
-        <Navbar/>
+        <Navbar
+        menuItems={[
+          { text: "TOP", href: "/", isSelected: false },
+          { text: "ブログ", href: "/blogs", isSelected: true }
+        ]}/>
         <div className="blogs-home">
           <Title1 
             title="ブログ"
@@ -102,7 +108,11 @@ export default function Blogs() {
   if (error) {
     return (
       <div className="min-h-screen bg-white flex flex-col items-center">
-        <Navbar/>
+        <Navbar
+        menuItems={[
+          { text: "TOP", href: "/", isSelected: false },
+          { text: "ブログ", href: "/blogs", isSelected: true }
+        ]}/>
         <div className="blogs-home">
           <Title1 
             title="ブログ"
@@ -119,7 +129,11 @@ export default function Blogs() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center">
-      <Navbar/>
+        <Navbar
+        menuItems={[
+          { text: "TOP", href: "/", isSelected: false },
+          { text: "ブログ", href: "/blogs", isSelected: true }
+        ]}/>
       <div className="blogs-page">
         <Title1 
           title="ブログ"
@@ -128,12 +142,12 @@ export default function Blogs() {
         />
         
         <div className="flex flex-col w-full items-center justify-center gap-[16px]">
-        {/* Search Bar */}
+        
         <div className="w-full h-[50px] px-4">
           <BlogSearchBar onSearch={handleSearch} />
         </div>
         
-        {/* Tags Row - 16px gap below search bar */}
+        
         <div className="w-full px-4 mt-4">
           <div className="mx-auto w-full max-w-[343px] sm:max-w-[720px] lg:max-w-[753px]">
             <div className="flex flex-wrap items-center justify-center gap-[8px]">
