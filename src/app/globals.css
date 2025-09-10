@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 
-  /* Design System - Responsive Scaling */
+  
   --figma-base-width: 1400;
   --rem-base-px: 10;
   font-size: calc(100vw / var(--figma-base-width) * var(--rem-base-px));
 
-  /* Color palette */
+  
   --color-willeder-red: #AD002D;
   --color-red-bright: #F23D6D;
   --color-pink-light: #FF99B4;
@@ -46,7 +47,7 @@ body {
   font-family:  var(--font-noto-sans-jp), var(--font-jost), Arial, Helvetica, sans-serif;
 }
 
-/* Design System - Typography */
+
 .h1 { 
   font-size: clamp(32px, calc(100vw / var(--figma-base-width) * 48), 56px); 
   line-height: 1.25; 
@@ -64,7 +65,7 @@ body {
   line-height: 1.25; 
 }
 
-/* Design System - Layout */
+
 .section { 
   padding-block: calc(100vw / var(--figma-base-width) * 40); 
 }
@@ -74,7 +75,7 @@ body {
   padding-inline: clamp(16px, calc(100vw / var(--figma-base-width) * 20), 24px); 
 }
 
-/* Design System - Components */
+
 .icon { 
   width: 12px; 
   height: 12px; 
@@ -92,7 +93,7 @@ body {
   aspect-ratio: 1200 / 630; 
 }
 
-/* Card1 Component Styles */
+
 .card1 {
   width: 410px;
   height: 460px;
@@ -176,7 +177,7 @@ body {
   }
 }
 
-/* Button Component Styles */
+
 .btn-primary {
   display: inline-flex;
   justify-content: center;
@@ -225,7 +226,7 @@ body {
   display: none;
 }
 
-/* Desktop/Tablet styles (>=601px) */
+
 @media (min-width: 601px) {
   .btn-primary {
     padding: 16px 48px;
@@ -241,7 +242,7 @@ body {
   }
 }
 
-/* Mobile styles (<=600px) */
+
 @media (max-width: 600px) {
   .btn-primary {
     padding: 16px 24px !important;
@@ -257,7 +258,7 @@ body {
   }
 }
 
-/* Header Button Styles */
+
 .btn-header {
   display: flex;
   cursor: pointer;
@@ -362,7 +363,7 @@ body {
   transition: all 100ms ease-out;
 }
 
-/* Willeder Logo Styles */
+
 .willeder-logo {
   display: inline-block;
   color: var(--color-black);
@@ -389,7 +390,7 @@ body {
   height: clamp(28px, calc(100vw / var(--figma-base-width) * 36), 36px);
 }
 
-/* Navbar Styles */
+
 .navbar {
   display: flex;
   width: 100%;
@@ -431,7 +432,7 @@ body {
   gap: clamp(48px, calc(100vw / var(--figma-base-width) * 64), 64px);
 }
 
-/* Mobile Navbar Styles */
+
 @media (max-width: 600px) {
   .navbar {
     width: 100vw !important;
@@ -562,14 +563,14 @@ body {
   }
 }
 
-/* Hide mobile menu on desktop */
+
 @media (min-width: 601px) {
   .navbar-mobile-menu {
     display: none;
   }
 }
 
-/* Tablet Navbar Styles */
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .navbar {
     padding-left: 24px !important;
@@ -588,7 +589,7 @@ body {
   }
 }
 
-/* Desktop Navbar Styles */
+
 @media (min-width: 1025px) {
   .navbar {
     padding-left: 24px !important;
@@ -603,7 +604,7 @@ body {
   }
 }
 
-/* Logo color variants */
+
 .willeder-logo-red {
   color: var(--color-willeder-red);
 }
@@ -667,7 +668,7 @@ body {
   }
 }
 
-/* MV Section Styles */
+
 .mv-section {
   display: flex;
   height: clamp(600px, calc(100vw / var(--figma-base-width) * 810), 810px);
@@ -683,29 +684,24 @@ body {
   align-items: flex-start;
   gap: clamp(32px, calc(100vw / var(--figma-base-width) * 64), 64px);
   flex: 1 0 0;
-
-  /* Width adapts to text size */
-  max-width: fit-content;     /* shrink-wrap to text width */
+  max-width: fit-content;     
 }
 
 .headline {
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 700;
 
-  /* Font size scales with viewport width */
+  
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 150%;
   color: #000;
 
-  /* Ensures width follows text */
+  
   display: inline-block;
   white-space: pre-line;
 }
 
 
-
-
-/* Desktop MV Styles */
 @media (min-width: 1025px) {
   .mv-right {
     display: flex;
@@ -718,9 +714,6 @@ body {
     flex: 1 0 0;
     aspect-ratio: 93/101;
   }
-
-
-
 
 
 }
@@ -753,7 +746,7 @@ body {
   aspect-ratio: 93/101;
 }
 
-/* Default button visibility - Desktop */
+
 .mv-button-desktop {
   display: block;
 }
@@ -762,23 +755,23 @@ body {
   display: none;
 }
 
-/* Mobile MV Styles */
+
 @media (max-width: 600px) {
   .mv-section {
-    /* keep as you have */
+    
     display: flex;
     flex-direction: column;
-    justify-content: center; /* vertical center */
-    align-items: center;     /* horizontal center */
+    justify-content: center; 
+    align-items: center;     
     width: 100%;
     height: clamp(810px, calc(810px + (320 * ((100vw - 375px) / (600 - 375)))), 1130px);
   }
 
-  /* Prevent children from stretching and taking all space */
+
   .mv-left{
-    align-self: center;      /* ensures children are centered horizontally */
-    flex: 0 0 auto;          /* don't grow or take full height */
-    width: auto;             /* don't force full width */
+    align-self: center;      
+    flex: 0 0 auto;          
+    width: auto;             
     max-width: 100%;
     order:1;
   }
@@ -787,12 +780,11 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 700;
 
-  /* Font size scales with viewport width */
   font-size: clamp(24px, calc(24px + (40 - 24) * ((100vw - 375px) / (600 - 375))), 40px);
   line-height: 150%;
   color: #000;
 
-  /* Ensures width follows text */
+
   display: inline-block;
   white-space: pre-line;
 }
@@ -805,32 +797,32 @@ body {
   }
 
   .mv-right {
-    align-self: center;      /* ensures children are centered horizontally */
-    flex: 0 0 auto;          /* don't grow or take full height */
-    width: auto;             /* don't force full width */
+    align-self: center;      
+    flex: 0 0 auto;          
+    width: auto;             
     max-width: 100%;
     order:2;
   }
  
-  /* Make the wrapper responsive but allow it to grow up to 800px */
+
   .mv-lottie-animation {
-    width: 100%;               /* fill parent's parent div width */
+    width: 100%;              
     max-width: 100%;
-    aspect-ratio: 800 / 868;   /* enforces the 800:868 ratio */
-    height: auto;              /* keep proportional height */
+    aspect-ratio: 800 / 868;   
+    height: auto;              
     display: block;
     margin: 0 auto;
-    overflow: hidden;          /* prevent overflow when renderer draws outside bounds */
+    overflow: hidden;          
     box-sizing: border-box;
     flex-shrink: 0;
   }
 
-  /* Ensure the rendered svg/canvas fills the wrapper exactly */
+ 
   .mv-lottie-animation svg,
   .mv-lottie-animation canvas {
     display: block !important;
-    width: 100% !important;    /* fill wrapper width */
-    height: 100% !important;   /* fill wrapper height derived from aspect-ratio */
+    width: 100% !important;    
+    height: 100% !important;   
     max-width: 100%;
     max-height: 100%;
     margin: 0;
@@ -838,7 +830,7 @@ body {
     transform-origin: center;
   }
 
-  /* make sure parents don't force a different size */
+  
   .mv-lottie-container {
     width: 100%;
     height:auto;
@@ -860,7 +852,7 @@ body {
 }
 
 
-/* Tablet MV Styles */
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .mv-section {
     display: flex;
@@ -883,13 +875,13 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 700;
 
-  /* Font size scales with viewport width */
+  
   font-size: clamp(42px, calc(42px + (75 - 42) * ((100vw - 601px) / (1024 - 601))), 75px);
   letter-spacing: 0.3;
   line-height: 150%;
   color: #000;
 
-  /* Ensures width follows text */
+  
   display: inline-block;
   white-space: pre-line;
 }
@@ -905,25 +897,25 @@ body {
 
 
   
-  /* Make the wrapper responsive but allow it to grow up to 800px */
+  
   .mv-lottie-animation {
-    width: 100%;               /* fill parent's parent div width */
+    width: 100%;               
     max-width: 100%;
-    aspect-ratio: 800 / 868;   /* enforces the 800:868 ratio */
-    height: auto;              /* keep proportional height */
+    aspect-ratio: 800 / 868;   
+    height: auto;              
     display: block;
     margin: 0 auto;
-    overflow: hidden;          /* prevent overflow when renderer draws outside bounds */
+    overflow: hidden;          
     box-sizing: border-box;
     flex-shrink: 0;
   }
 
-  /* Ensure the rendered svg/canvas fills the wrapper exactly */
+
   .mv-lottie-animation svg,
   .mv-lottie-animation canvas {
     display: block !important;
-    width: 100% !important;    /* fill wrapper width */
-    height: 100% !important;   /* fill wrapper height derived from aspect-ratio */
+    width: 100% !important;    
+    height: 100% !important;   
     max-width: 100%;
     max-height: 100%;
     margin: 0;
@@ -931,19 +923,18 @@ body {
     transform-origin: center;
   }
 
-  /* make sure parents don't force a different size */
+
   .mv-lottie-container {
     width: 100%;
     height:auto;
     
   }
-  
-  /* Hide desktop button on tablet */
+
   .mv-button-desktop {
     display: none;
   }
   
-  /* Show mobile button on tablet */
+
   .mv-button-mobile {
     display: flex;
     justify-content: center;
@@ -954,7 +945,7 @@ body {
 }
 
 
-/* TopService Component Styles */
+
 .top-service {
   display: flex;
   padding: 96px 80px 160px 80px;
@@ -974,7 +965,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* Tablet TopService Styles */
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .top-service {
     padding: 96px 16px 160px 16px;
@@ -987,7 +978,7 @@ body {
   }
 }
 
-/* Mobile TopService Styles */
+
 @media (max-width: 600px) {
   .top-service {
     padding: 96px 16px 160px 16px;
@@ -1000,7 +991,7 @@ body {
   }
 }
 
-/* Title1 Component Styles */
+
 .title1-container {
   display: flex;
   width: clamp(320px, calc(100vw / var(--figma-base-width) * 1280), 1280px);
@@ -1070,7 +1061,6 @@ body {
   color: var(--color-willeder-red);
 }
 
-/* Responsive SVG visibility */
 .title1-svg-desktop {
   display: block;
   width: 100%;
@@ -1089,7 +1079,7 @@ body {
   height: 2px;
 }
 
-/* Mobile Title1 Styles */
+
 @media (max-width: 600px) {
   .title1-svg-desktop {
     display: none;
@@ -1104,7 +1094,7 @@ body {
   }
 }
 
-/* Tablet Title1 Styles */
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .title1-svg-desktop {
     display: none;
@@ -1119,7 +1109,7 @@ body {
   }
 }
 
-/* Desktop Title1 Styles */
+
 @media (min-width: 1025px) {
   .title1-svg-desktop {
     display: block;
@@ -1134,7 +1124,7 @@ body {
   }
 }
 
-/* Tag Component Styles */
+
 .tag {
   display: inline-flex;
   height: clamp(20px, calc(100vw / var(--figma-base-width) * 20), 20px);
@@ -1177,7 +1167,7 @@ body {
   color: var(--color-gray3);
 }
 
-/* BlogCard Component Styles */
+
 .blog-card {
   width: 100%;
   max-width: clamp(343px, calc(100vw / var(--figma-base-width) * 411), 411px);
@@ -1266,7 +1256,7 @@ body {
   align-content: flex-start;
 }
 
-/* Mobile BlogCard Styles */
+
 @media (max-width: 600px) {
   .blog-card {
     max-width: 343px;
@@ -1277,7 +1267,7 @@ body {
   }
 }
 
-/* Tablet BlogCard Styles */
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .blog-card {
     max-width: 350px;
@@ -1288,7 +1278,7 @@ body {
   }
 }
 
-/* Desktop BlogCard Styles */
+
 @media (min-width: 1025px) {
   .blog-card {
     max-width: 411px;
@@ -1299,7 +1289,7 @@ body {
   }
 }
 
-/* Button2 (Link Button) Component Styles */
+
 .btn-link-2 {
   display: inline-flex;
   justify-content: flex-start;
@@ -1329,7 +1319,7 @@ body {
   transition: color 200ms ease;
   letter-spacing: clamp(0.6px, calc(100vw / var(--figma-base-width) * 0.8), 1.2px);
   
-  /* Mobile text size */
+
   font-size: clamp(16px, calc(100vw / var(--figma-base-width) * 16), 16px);
 }
 
@@ -1341,7 +1331,7 @@ body {
   justify-content: center;
 }
 
-/* Mobile icon styles */
+
 .btn-link-2-icon-mobile {
   width: clamp(24px, calc(100vw / var(--figma-base-width) * 24), 24px);
   height: clamp(16px, calc(100vw / var(--figma-base-width) * 16), 16px);
@@ -1350,7 +1340,6 @@ body {
   display: block;
 }
 
-/* Desktop/Tablet icon styles */
 .btn-link-2-icon-desktop {
   width: clamp(32px, calc(100vw / var(--figma-base-width) * 32), 32px);
   height: clamp(24px, calc(100vw / var(--figma-base-width) * 24), 24px);
@@ -1359,7 +1348,7 @@ body {
   display: none;
 }
 
-/* Color variants */
+
 .text-willeder-red {
   color: var(--color-willeder-red);
 }
@@ -1368,10 +1357,10 @@ body {
   color: var(--color-black);
 }
 
-/* Desktop/Tablet styles (>=601px) */
+
 @media (min-width: 601px) {
   .btn-link-2-text {
-    /* Desktop/Tablet text size */
+   
     font-size: clamp(20px, calc(100vw / var(--figma-base-width) * 20), 20px);
   }
   
@@ -1384,7 +1373,7 @@ body {
   }
 }
 
-/* Mobile styles (<=600px) */
+
 @media (max-width: 600px) {
   .btn-link-2-icon-desktop {
     display: none !important;
@@ -1395,7 +1384,7 @@ body {
   }
 }
 
-/* Hover effects */
+
 .btn-link-2:hover .btn-link-2-text {
   color: var(--color-willeder-red);
 }
@@ -1405,7 +1394,7 @@ body {
   outline-offset: 2px;
 }
 
-/* SVG transition effects */
+
 .btn-link-2-icon svg {
   transition: all 200ms ease;
 }
@@ -1425,7 +1414,7 @@ body {
 }
 
 
-/* Enhanced BlogsHome Cards Responsive Layout */
+
 .blogs-home-cards {
   display: grid;
   gap: 24px;
@@ -1434,7 +1423,7 @@ body {
   align-items: start;
 }
 
-/* Desktop: Only 3 blogs in a row (hide 4th blog) */
+
 @media (min-width: 1025px) {
   .blogs-home-cards {
     grid-template-columns: repeat(3, 1fr);
@@ -1442,13 +1431,12 @@ body {
     
   }
   
-  /* Hide the 4th blog on desktop */
   .blogs-home-cards .blog-card:nth-child(4) {
     display: none;
   }
 }
 
-/* Tablet: Smart responsive grid */
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .blogs-home{
     padding: 96px 24px 160px 24px;
@@ -1460,7 +1448,7 @@ body {
   }
 }
 
-/* Mobile: Single column with only 3 blogs */
+
 @media (max-width: 600px) {
   .blogs-home{
     padding: 96px 16px 160px 16px;
@@ -1472,13 +1460,13 @@ body {
     gap: 24px;
   }
   
-  /* Hide the 4th blog on mobile */
+
   .blogs-home-cards .blog-card:nth-child(4) {
     display: none;
   }
 }
 
-/* Fallback for browsers that don't support complex media queries */
+
 @supports not selector(:has(*)) {
   @media (min-width: 601px) and (max-width: 1024px) {
     .blogs-home-cards {
@@ -1496,10 +1484,10 @@ body {
   display: inline-flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1rem; /* 4 = 1rem */
+  gap: 1rem; 
 }
 
-/* Footer CTA Component Styles */
+
 .footer-cta {
   width: clamp(375px, calc(100vw / var(--figma-base-width) * 1400), 1920px);
   max-width: 100%;
@@ -1525,7 +1513,7 @@ body {
   letter-spacing: clamp(0.8px, calc(100vw / var(--figma-base-width) * 1.2), 1.2px);
 }
 
-/* Desktop and Mobile Text Display Control */
+
 .footer-cta-text-desktop {
   display: block;
 }
@@ -1541,7 +1529,7 @@ body {
   width: 100%;
 }
 
-/* Mobile Footer CTA Styles */
+
 @media (max-width: 600px) {
   
   .footer-cta {
@@ -1562,7 +1550,6 @@ body {
   }
 }
 
-/* Tablet Footer CTA Styles */
 @media (min-width: 601px) and (max-width: 1024px) {
   .footer-cta {
     padding: 96px 24px;
@@ -1570,7 +1557,7 @@ body {
   }
 }
 
-/* Desktop Footer CTA Styles */
+
 @media (min-width: 1025px) {
   .footer-cta {
     padding: 96px 80px;
@@ -1578,7 +1565,7 @@ body {
   }
 }
 
-/* Footer PC Component Styles */
+
 .footer-pc {
   width: clamp(375px, 100%, 1920px);
   padding: clamp(16px, calc(100vw / var(--figma-base-width) * 16), 16px) clamp(16px, calc(100vw / var(--figma-base-width) * 80), 80px) clamp(16px, calc(100vw / var(--figma-base-width) * 16), 16px) clamp(16px, calc(100vw / var(--figma-base-width) * 80), 80px);
@@ -1696,7 +1683,7 @@ body {
   letter-spacing: clamp(0.5px, calc(100vw / var(--figma-base-width) * 0.6), 0.6px);
 }
 
-/* Mobile Footer Styles */
+
 @media (max-width: 600px) {
   .footer-pc {
     padding: 16px;
@@ -1742,7 +1729,7 @@ body {
   }
 }
 
-/* Tablet Footer Styles */
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .footer-pc {
     padding: 16px 24px;
@@ -1792,7 +1779,7 @@ body {
   
 }
 
-/* Tablet: Smart responsive grid */
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .blogs-page{
     padding: 96px 24px 160px 24px;
@@ -1804,7 +1791,7 @@ body {
   }
 }
 
-/* Mobile: Single column with only 3 blogs */
+
 @media (max-width: 600px) {
   .blogs-page{
     padding: 96px 16px 160px 16px;
@@ -1816,4 +1803,13 @@ body {
     gap: 24px;
   }
   
+}
+
+.recommend-page{
+    display: flex;
+  padding: 0 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  align-self: stretch;
 }

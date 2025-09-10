@@ -13,6 +13,7 @@ export async function GET(request) {
   
   try {
     const result = await blogService.getBlogs(params);
+    console.log('Fetched blogs:', result);
     return NextResponse.json(result);
   } catch (error) {
     console.error('Error fetching blogs:', error);

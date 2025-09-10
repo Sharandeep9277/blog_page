@@ -73,9 +73,37 @@ class BlogService {
   }
 
   async getBlogBySlug(slug) {
-    // Fetch all blogs and find by slug
+    // Fetch all blogs to find the current one and determine prev/next
     const result = await this.fetchFromJsonServer('/blogs');
-    return result.data.find(blog => blog.slug === slug);
+    const blogs = result.data;
+    
+    const currentIndex = blogs.findIndex(blog => blog.slug === slug);
+    
+    if (currentIndex === -1) {
+      return null; // Blog not found
+    }
+    
+    const currentBlog = blogs[currentIndex];
+    const prevBlog = currentIndex > 0 ? blogs[currentIndex - 1] : null;
+    const nextBlog = currentIndex < blogs.length - 1 ? blogs[currentIndex + 1] : null;
+    
+    return {
+      blog: currentBlog,
+      navigation: {
+        prev: prevBlog ? {
+          slug: prevBlog.slug,
+          title: prevBlog.title,
+          // Include any other fields you want for navigation
+          publishedAt: prevBlog.publishedAt
+        } : null,
+        next: nextBlog ? {
+          slug: nextBlog.slug,
+          title: nextBlog.title,
+          // Include any other fields you want for navigation
+          publishedAt: nextBlog.publishedAt
+        } : null
+      }
+    };
   }
 }
 

@@ -7,7 +7,7 @@ import BlogCard from './blogCard';
 import Button2 from './buttons/button2';
 import { useRouter } from "next/navigation";
 
-const BlogSection = () => {
+const RecommendedSection = () => {
 
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -76,12 +76,10 @@ const BlogSection = () => {
   }
 
   return (
-    <div className="blogs-home">
-      <Title1 
-        title="ブログ"
-        subtitle="BLOG"
-        variant='light'
-      />
+    <div className="recommend-page">
+      <div className='flex flex-col justify-center items-center'>
+        <div className='text-black font-bold text-[24px] leading-[150%] tracking-[0.5]'>おすすめの記事</div>
+      </div>
       
       <div className="blogs-home-cards">
         {blogs.map((blog) => (
@@ -100,4 +98,4 @@ const BlogSection = () => {
   );
 };
 
-export default BlogSection;
+export default RecommendedSection;
