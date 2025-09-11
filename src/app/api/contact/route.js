@@ -53,16 +53,16 @@ export async function POST(request) {
     const clientIp = forwardedFor ? forwardedFor.split(',')[0] : 'unknown';
 
     
-    if (isRateLimited(clientIp)) {
-      return Response.json(
-        { 
-          success: false, 
-          message: 'Too many requests. Please try again later.',
-          error: 'RATE_LIMITED'
-        },
-        { status: 429 }
-      );
-    }
+    // if (isRateLimited(clientIp)) {
+    //   return Response.json(
+    //     { 
+    //       success: false, 
+    //       message: 'Too many requests. Please try again later.',
+    //       error: 'RATE_LIMITED'
+    //     },
+    //     { status: 429 }
+    //   );
+    // }
 
     
     const body = await request.json();
