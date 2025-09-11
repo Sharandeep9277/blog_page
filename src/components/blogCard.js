@@ -11,10 +11,10 @@ const BlogCard = ({
   onTagClick,
   ...props 
 }) => {
-  // Fixed five tags that will always be shown
+  
   const allTags = ['IT Consulting', 'Engineering', 'Branding', 'Design', 'Other'];
   
-  // Format date to match your design (YYYY.MM.DD)
+  
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const year = date.getFullYear();
@@ -30,7 +30,7 @@ const BlogCard = ({
   };
 
   const handleTagClick = (tag, e) => {
-    e.stopPropagation(); // Prevent card click when clicking tag
+    e.stopPropagation(); 
     if (onTagClick) {
       onTagClick(tag);
     }
@@ -61,7 +61,7 @@ const BlogCard = ({
         </div>
         <div className="blog-card-tags">
           {allTags.map((tag, index) => {
-            // Check if this tag is in the post's tags array or in activeTags
+            
             const isPostTag = post.tags?.includes(tag);
             const isActiveTag = activeTags.includes(tag);
             

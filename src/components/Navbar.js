@@ -21,16 +21,16 @@ const Navbar = ({
   return (
     <div className="w-full">
       <nav className={`navbar ${className}`}>
-        {/* Left side - Logo */}
+        
         <div className="navbar-logo-container">
           <div className="navbar-logo">
             <WillederLogo size="small" />
           </div>
         </div>
         
-        {/* Right side - Desktop Navigation */}
+        
         <div className="navbar-right">
-          {/* Header buttons container */}
+          
           <div className="navbar-menu">
             {menuItems.map((item, index) => (
               <ButtonHeader1
@@ -42,14 +42,14 @@ const Navbar = ({
             ))}
           </div>
           
-          {/* Contact button */}
+          
           <ButtonHeader2
             text={contactText}
             href={contactHref}
           />
         </div>
         
-        {/* Mobile hamburger menu */}
+        
         <div 
           className={`navbar-mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -72,7 +72,7 @@ const Navbar = ({
         </div>
       </nav>
       
-      {/* Mobile dropdown menu */}
+      
       {isMobileMenuOpen && (
         <div className="navbar-mobile-dropdown">
           {menuItems.map((item, index) => (

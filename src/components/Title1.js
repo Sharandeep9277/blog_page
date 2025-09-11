@@ -23,16 +23,16 @@ const Title1 = ({
 
   return (
     <div className={`title1-container ${className}`}>
-      {/* Main title */}
+      
       <div className={`title1-text ${colors.titleColor}`}>
         {title}
       </div>
       
-      {/* Decorative line with subtitle */}
+      
       <div className="title1-line-container">
-        {/* Left line */}
+        
         <div className="title1-line-section">
-          {/* Desktop SVG */}
+          
           <svg 
             className="title1-svg-desktop"
             xmlns="http://www.w3.org/2000/svg" 
@@ -44,7 +44,7 @@ const Title1 = ({
             <path d="M0 1H592" stroke={colors.strokeColor}/>
           </svg>
           
-          {/* Tablet SVG */}
+          
           <svg 
             className="title1-svg-tablet"
             xmlns="http://www.w3.org/2000/svg" 
@@ -56,7 +56,7 @@ const Title1 = ({
             <path d="M0 0.630127H312" stroke={colors.strokeColor}/>
           </svg>
           
-          {/* Mobile SVG */}
+          
           <svg 
             className="title1-svg-mobile"
             xmlns="http://www.w3.org/2000/svg" 
@@ -69,16 +69,16 @@ const Title1 = ({
           </svg>
         </div>
         
-        {/* Center text */}
+        
         <div className="title1-center">
           <div className={`title1-subtitle ${colors.subtitleColor}`}>
             {subtitle}
           </div>
         </div>
         
-        {/* Right line */}
+        
         <div className="title1-line-section">
-          {/* Desktop SVG */}
+          
           <svg 
             className="title1-svg-desktop"
             xmlns="http://www.w3.org/2000/svg" 
@@ -90,7 +90,7 @@ const Title1 = ({
             <path d="M0 1H592" stroke={colors.strokeColor}/>
           </svg>
           
-          {/* Tablet SVG */}
+          
           <svg 
             className="title1-svg-tablet"
             xmlns="http://www.w3.org/2000/svg" 
@@ -102,7 +102,7 @@ const Title1 = ({
             <path d="M0 0.630127H312" stroke={colors.strokeColor}/>
           </svg>
           
-          {/* Mobile SVG */}
+          
           <svg 
             className="title1-svg-mobile"
             xmlns="http://www.w3.org/2000/svg" 

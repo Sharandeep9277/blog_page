@@ -1,6 +1,6 @@
 const WillederLogo = ({ 
   className = "",
-  size = "default" // "small", "default", "large"
+  size = "default" 
 }) => {
   const getSizeClass = () => {
     switch (size) {

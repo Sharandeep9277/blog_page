@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Title1 from './Title1';
-import Card1 from './Card1';
 import BlogCard from './blogCard';
 import Button2 from './buttons/button2';
 import { useRouter } from "next/navigation";

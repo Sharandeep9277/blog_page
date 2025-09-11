@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 const Button2 = ({ 
   children = "もっと見る", 
-  variant = "default", // "default" or "hover"
+  variant = "default", 
   onClick,
   className = ""
 }) => {
@@ -37,7 +37,7 @@ const Button2 = ({
         </div>
       </div>
       <div className="btn-link-2-icon">
-        {/* Mobile SVG */}
+        
         <div className="btn-link-2-icon-mobile">
           {variant === "hover" || isHovered ? (
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18" fill="none" className="w-full h-full">
@@ -64,7 +64,7 @@ const Button2 = ({
           )}
         </div>
 
-        {/* Desktop/Tablet SVG */}
+        
         <div className="btn-link-2-icon-desktop">
           {variant === "hover" || isHovered ? (
             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="24" viewBox="0 0 34 24" fill="none" className="w-full h-full">

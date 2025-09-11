@@ -80,7 +80,6 @@ export default function Blogs() {
   };
 
   const handleBlogClick = (blog) => {
-    console.log('Blog clicked:', blog);
     router.push(`/blogs/${blog.slug}`);
   };
 

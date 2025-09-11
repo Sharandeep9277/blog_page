@@ -1,26 +1,18 @@
 'use client';
+import { useState, useEffect } from 'react';
 import Button1PC from "@/components/buttons/button1PC";
 import Navbar from "@/components/Navbar";
 import TopService from "@/components/TopService";
 import BlogSection from "@/components/blogSection";
 import FooterCta from "@/components/footerCTA";
 import Footer from "@/components/footer";
-import Image from "next/image";
 import dynamic from "next/dynamic";
 
-export default function Home() {
-  const samplePost = {
-  "id": "SAMPLE",
-  "slug": "sample-post", 
-  "title": "Sample Post (Replace with your own)",
-  "thumbnail": "https://picsum.photos/seed/1/1200/630",
-  "tags": ["sample", "replace-me"],
-  "createdAt": "2025-08-01",
-  "content": "<h2>Heading</h2><p>Sample paragraph…</p>"
-};
 
 
 const LottieAnimation = dynamic(() => import('@/components/LottieAnimation'), { ssr: false });
+
+export default function Home() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center">
