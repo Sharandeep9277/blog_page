@@ -10,6 +10,9 @@ import TitleCreatedAtTag from "@/components/blogs/h1Tag";
 import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
 import ButtonBlog from '@/components/buttons/buttonBlog1';
 import RecommendedSection from '@/components/recommended';
+import Image from 'next/image';
+import LoadingScreen from '@/components/LoadingScreen';
+
 
 export default function BlogPost() {
   const [blog, setBlog] = useState(null);
@@ -64,32 +67,18 @@ export default function BlogPost() {
     });
   };
 
-  const calculateReadTime = (content) => {
-    if (!content) return '1';
-    const wordsPerMinute = 200;
-    const wordCount = content.split(/\s+/).length;
-    const readTime = Math.ceil(wordCount / wordsPerMinute);
-    return readTime.toString();
-  };
-
   if (loading) {
-    return (
-      <div className="min-h-screen bg-white flex flex-col">
-        <Navbar />
-        <div className="flex-1 flex items-center justify-center">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading blog post...</p>
-          </div>
-        </div>
-      </div>
-    );
+    return <LoadingScreen/>;
   }
 
   if (error) {
     return (
       <div className="min-h-screen bg-white flex flex-col">
-        <Navbar />
+        <Navbar
+        menuItems={[
+          { text: "TOP", href: "/", isSelected: false },
+          { text: "ブログ", href: "/blogs", isSelected: true }
+        ]}/>
         <div className="flex-1 flex items-center justify-center">
           <div className="text-center max-w-md px-4">
             <h1 className="text-2xl font-bold text-gray-900 mb-4">
@@ -119,13 +108,17 @@ export default function BlogPost() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <Navbar />
+      <Navbar
+        menuItems={[
+          { text: "TOP", href: "/", isSelected: false },
+          { text: "ブログ", href: "/blogs", isSelected: true }
+        ]}/>
       <div className='flex flex-col justify-start items-center  gap-[96px] bg-[#F1F2F4] px-[16px] md:px-[24px] lg:px-[80px] pt-[48px] pb-[160px] '>
         <div className='flex flex-col justify-start items-center gap-[64px] '>
             <div className='py-[96px] bg-white rounded-[16px] flex flex-col justify-start items-center gap-[48px]'>
                 <div className='flex flex-col justify-start items-start gap-[64px]'>
                     <TitleCreatedAtTag title={blog.title} publishedAt={blog.createdAt} tags={['IT Consulting', 'Engineering', 'Branding', 'Design', 'Other']} activeTags={blog.tags}/>
-                    <img  className="w-full h-[214.38px] md:h-[450px] lg:h-[800px] " src={blog.thumbnail} />
+                    <Image width={800} height={214} alt={blog.title} className="w-full h-[214.38px] md:h-[450px] lg:h-[800px] " src={blog.thumbnail} />
                 </div>
                 <div className="w-full ">
                     <BlogContent content={blog.content} />

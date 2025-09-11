@@ -9,6 +9,7 @@ import Tag from "@/components/buttons/tag";
 import FooterCta from "@/components/footerCTA";
 import Footer from "@/components/footer";
 import { useRouter } from "next/navigation";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Blogs() {
   const [blogs, setBlogs] = useState([]);
@@ -84,25 +85,7 @@ export default function Blogs() {
   };
 
   if (loading) {
-    return (
-      <div className="min-h-screen bg-white flex flex-col items-center">
-        <Navbar
-        menuItems={[
-          { text: "TOP", href: "/", isSelected: false },
-          { text: "ブログ", href: "/blogs", isSelected: true }
-        ]}/>
-        <div className="blogs-home">
-          <Title1 
-            title="ブログ"
-            subtitle="BLOG"
-            variant='light'
-          />
-          <div className="blogs-home-cards">
-            <div>Loading blogs...</div>
-          </div>
-        </div>
-      </div>
-    );
+    return (<LoadingScreen/>); 
   }
 
   if (error) {

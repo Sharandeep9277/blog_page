@@ -22,16 +22,16 @@ const ButtonBlog = ({ navigation }) => {
         style={navigation.prev?.slug ? buttonStyle : {}}
         disabled={!navigation.prev?.slug}
       >
-        <div className="w-[12px] h-[24px] flex justify-center items-center">
+        <div className="w-[12px] h-[24px] flex justify-center items-center ">
           <Icon 
             icon="weui:arrow-filled" 
             className={`w-full h-full rotate-180  ${
-              navigation.prev?.slug ? 'group-hover:[color:var(--hover-color)] ' : ''
+              navigation.prev?.slug ? 'text-[var(--color-willeder-red)] group-hover:[color:var(--hover-color)] ' : ''
             }`}
           />
         </div>
         <div className={`text-center justify-start text-[16px] font-medium font-['Jost'] leading-[150%] tracking-[0.5] ${
-          navigation.prev?.slug ? 'text-[var(--color-willeder-red)] group-hover:[color:var(--hover-color)]' : ''
+          navigation.prev?.slug ? ' group-hover:[color:var(--hover-color)]' : ''
         }`}>
           Prev
         </div>
