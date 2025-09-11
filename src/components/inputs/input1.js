@@ -42,7 +42,7 @@ const Input1 = ({
         
         <input
           type="text"
-          value={inputValue}
+          value={value}
           onChange={handleChange}
           className="flex-1 bg-transparent text-black text-[16px] md:text-[18px] font-medium font-['Noto_Sans_JP'] leading-tight md:leading-snug outline-none"
           placeholder={error ? "" : placeholder}
