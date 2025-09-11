@@ -2,9 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 
 const BlogContent = ({ content }) => {
-  const createMarkup = (html) => {
-    return { __dangerouslySetInnerHTML: { __html: html } };
-  };
+
 
   const processContent = (htmlContent) => {
     const parser = new DOMParser();
@@ -18,10 +16,10 @@ const BlogContent = ({ content }) => {
                 key={index}
                 className="w-[295px] md:w-full pt-[96px] gap-[8px] md:gap-[24px] flex flex-row justify-start items-start"
                 >
-                {/* rectangle */}
+                
                 <div className="w-full max-w-[8px] self-stretch bg-red-800" />
 
-                {/* content */}
+                
                 <h2 className="text-[24px] md:text-[32px] font-bold text-black leading-[150%] tracking-[0.5]">
                     {element.textContent}
                 </h2>

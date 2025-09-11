@@ -37,7 +37,6 @@ export default function BlogPost() {
         }
         
         const data = await response.json();
-        console.log(data);
         setBlog(data.blog || null);
         setNavigation(data.navigation || {});
       } catch (err) {

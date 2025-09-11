@@ -11,7 +11,7 @@ const ButtonBlog = ({ navigation }) => {
 
   return (
     <div className="inline-flex justify-center items-center gap-[64px]">
-      {/* Previous Button */}
+      
       <button
         onClick={() => navigation.prev?.slug && router.push(`/blogs/${navigation.prev.slug}`)}
         className={`group inline-flex justify-start items-center gap-[24px]  ${
@@ -37,7 +37,7 @@ const ButtonBlog = ({ navigation }) => {
         </div>
       </button>
 
-      {/* All Blogs Button */}
+      
       <button
         onClick={() => router.push('/blogs')}
         className="group w-[32px] h-[32px] flex justify-start items-center overflow-hidden text-black hover:[color:var(--hover-color)] cursor-pointer"
@@ -46,7 +46,7 @@ const ButtonBlog = ({ navigation }) => {
         <Icon icon="mdi:apps" className="w-[32px] h-[32px] text-[var(--color-willeder-red)] group-hover:[color:var(--hover-color)]" />
       </button>
 
-      {/* Next Button */}
+      
       <button
         onClick={() => navigation.next?.slug && router.push(`/blogs/${navigation.next.slug}`)}
         className={`group inline-flex justify-start items-center gap-[24px] ${

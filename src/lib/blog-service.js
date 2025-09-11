@@ -4,17 +4,17 @@ class BlogService {
   }
 
   getJsonServerUrl() {
-    // Priority: Environment variable > Default dev URL
+    
     if (process.env.JSON_SERVER_URL) {
       return process.env.JSON_SERVER_URL;
     }
     
-    // Default for development
+    
     if (process.env.NODE_ENV === 'development') {
       return 'http://localhost:3001';
     }
     
-    // This should be set in production environment
+    
     throw new Error('JSON_SERVER_URL environment variable is required in production');
   }
 
@@ -45,7 +45,7 @@ class BlogService {
   async getBlogs(params = {}) {
     const { page, limit, tag, q } = params;
     
-    // Map Next.js parameters to JSON Server parameters
+    
     const jsonServerParams = {};
     if (page) jsonServerParams._page = page;
     if (limit) jsonServerParams._limit = limit;
@@ -73,14 +73,14 @@ class BlogService {
   }
 
   async getBlogBySlug(slug) {
-    // Fetch all blogs to find the current one and determine prev/next
+    
     const result = await this.fetchFromJsonServer('/blogs');
     const blogs = result.data;
     
     const currentIndex = blogs.findIndex(blog => blog.slug === slug);
     
     if (currentIndex === -1) {
-      return null; // Blog not found
+      return null; 
     }
     
     const currentBlog = blogs[currentIndex];
@@ -93,13 +93,13 @@ class BlogService {
         prev: prevBlog ? {
           slug: prevBlog.slug,
           title: prevBlog.title,
-          // Include any other fields you want for navigation
+          
           publishedAt: prevBlog.publishedAt
         } : null,
         next: nextBlog ? {
           slug: nextBlog.slug,
           title: nextBlog.title,
-          // Include any other fields you want for navigation
+          
           publishedAt: nextBlog.publishedAt
         } : null
       }
@@ -107,6 +107,6 @@ class BlogService {
   }
 }
 
-// Create singleton instance
+
 const blogService = new BlogService();
 export default blogService;

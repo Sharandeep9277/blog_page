@@ -7,7 +7,7 @@ const ButtonBlog = ({ navigation }) => {
 
   return (
     <div className="w-full flex justify-between items-center max-w-4xl">
-      {/* Previous Button */}
+      
       <button
         onClick={() => router.push(`/blogs/${navigation.prev.slug}`)}
         className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors duration-200 
@@ -20,7 +20,7 @@ const ButtonBlog = ({ navigation }) => {
         <span>Previous</span>
       </button>
 
-      {/* Home/All Blogs Button */}
+      
       <button
         onClick={() => router.push('/blogs')}
         className="flex items-center px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
@@ -30,7 +30,7 @@ const ButtonBlog = ({ navigation }) => {
         </svg>
       </button>
 
-      {/* Next Button */}
+      
       <button
         onClick={() => router.push(`/blogs/${navigation.next.slug}`)}
         className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors duration-200 

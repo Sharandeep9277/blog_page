@@ -264,8 +264,6 @@ body {
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  /* padding-inline: clamp(12px, calc(100vw / var(--figma-base-width) * 16), 16px);
-  padding-block: clamp(6px, calc(100vw / var(--figma-base-width) * 8), 8px); */
   transition: colors 200ms ease;
   min-height: 44px;
 }

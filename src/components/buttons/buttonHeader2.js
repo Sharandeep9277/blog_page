@@ -12,7 +12,7 @@ const ButtonHeader2 = ({
   return (
     <Link href={href}>
       <button 
-        className={`btn-header2 btn-header2-black ${className}`}
+        className={`btn-header2 btn-header2-black cursor-pointer ${className}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
